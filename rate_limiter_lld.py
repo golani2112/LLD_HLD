@@ -2,6 +2,7 @@ import time
 from collections import deque
 
 
+
 def _valid_cost(cost, capacity):
     return isinstance(cost, int) and not isinstance(cost, bool) and 0 < cost <= capacity
 
