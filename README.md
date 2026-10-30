@@ -4,9 +4,9 @@ A hands-on collection of system-design practice for software engineering intervi
 
 The goal is not just to collect answers. Each case study should make the requirements, design choices, trade-offs, and failure handling easy to understand and discuss.
 
-## Current Case Study
+## Current Case Studies
 
-### Flight Booking System (LLD)
+### 1) Flight Booking System (LLD)
 
 A runnable Python design for searching direct flights and booking seats for one or more passengers. It focuses on the parts of booking that need careful reasoning: seat availability, temporary holds, payment outcomes, idempotent retries, ticket issuance, and cancellation.
 
@@ -16,6 +16,15 @@ A runnable Python design for searching direct flights and booking seats for one 
 
 The implementation uses in-memory repositories and a simulated payment service so the example is easy to run. It is an interview-practice project, not a production booking platform.
 
+### 2) Rate Limiter (LLD)
+
+A completed interview-style implementation of a rate limiter built around common strategies: token bucket, fixed window, and sliding window. This design demonstrates how the same API can be adapted to different algorithms while keeping a clean, testable interface.
+
+- [Python implementation](rate_limiter_lld.py): strategy-based design with per-key bucket state and request checks.
+- Focus areas: request quotas, burst handling, time-window logic, fairness, and algorithm trade-offs.
+
+This version is intentionally simple and suitable for LLD discussion and interview explanation. It highlights the practical differences between strategies without overengineering the solution.
+
 ## Repository Layout
 
 ```text
@@ -23,8 +32,10 @@ The implementation uses in-memory repositories and a simulated payment service s
 ├── README.md
 ├── flight_booking_system.py
 ├── flight_booking_system_lld.md
+├── rate_limiter_lld.py
 ├── test_flight_booking_system.py
-└── .gitignore
+├── .gitignore
+└── .venv/
 ```
 
 ## Run Locally
